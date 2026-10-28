@@ -1,0 +1,6 @@
+KivyMD version: 2.0.0
+MDButton, MDButtonText, MDButtonIcon all importable
+TEST1 FAIL: KivyMD: App object must be initialized before loading root widget. See https://github.com/kivymd/KivyMD/wiki/Modules-Material-App#exceptions
+MDButton module: kivymd.uix.button.button
+MDButton has 'style' attribute
+TEST3 FAIL: KivyMD: App object must be initialized before loading root widget. See https://github.com/kivymd/KivyMD/wiki/Modules-Material-App#exceptions

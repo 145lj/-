@@ -1,0 +1,65 @@
+name: 构建安卓 APK
+
+on:
+  workflow_dispatch:
+    inputs:
+      clean_cache:
+        description: '清掉构建缓存（改了 buildozer.spec 或缓存坏了再勾）'
+        type: boolean
+        default: false
+  push:
+    paths:
+      - 'wanghanyu/buildozer.spec'
+      - '.github/workflows/apk.yml'
+
+jobs:
+  apk:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 90
+    env:
+      DEBIAN_FRONTEND: noninteractive
+      PYTHONUNBUFFERED: '1'
+
+    steps:
+      - uses: actions/checkout@v4
+
+      # buildozer 编译期依赖（Ubuntu 官方文档列的一套）
+      - name: 安装系统依赖
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y --no-install-recommends \
+            git zip unzip openjdk-17-jdk python3-pip \
+            autoconf libtool pkg-config zlib1g-dev \
+            libncurses5-dev libncursesw5-dev libtinfo5 \
+            cmake libffi-dev libssl-dev
+
+      # NDK 链接阶段内存峰值高，加 4G swap 防止被 OOM 杀掉
+      - name: 追加 swap
+        run: |
+          sudo fallocate -l 4G /swapfile
+          sudo chmod 600 /swapfile
+          sudo mkswap /swapfile
+          sudo swapon /swapfile
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: 缓存 SDK/NDK
+        uses: actions/cache@v4
+        with:
+          path: ~/.buildozer
+          key: buildozer-${{ inputs.clean_cache && 'fresh' || github.run_id }}
+          restore-keys: buildozer-
+
+      - name: 安装 buildozer
+        run: pip3 install --user buildozer
+
+      - name: 构建 debug APK
+        working-directory: wanghanyu
+        run: buildozer android debug
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: wanghanyu-apk
+          path: wanghanyu/bin/*.apk

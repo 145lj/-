@@ -1,0 +1,13 @@
+Found fonts:
+C:\Windows\Fonts\Deng.ttf
+C:\Windows\Fonts\Dengb.ttf
+C:\Windows\Fonts\Dengl.ttf
+C:\Windows\Fonts\msyh.ttc
+C:\Windows\Fonts\msyhbd.ttc
+C:\Windows\Fonts\msyhl.ttc
+C:\Windows\Fonts\OLDENGL.TTF
+C:\Windows\Fonts\simhei.ttf
+C:\Windows\Fonts\simkai.ttf
+C:\Windows\Fonts\simsun.ttc
+C:\Windows\Fonts\simsunb.ttf
+C:\Windows\Fonts\SimsunExtG.ttf

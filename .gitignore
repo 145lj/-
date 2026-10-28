@@ -1,0 +1,27 @@
+# 环境与构建产物
+venv/
+__pycache__/
+*.pyc
+.buildozer/
+bin/
+
+# 密钥与本地状态（绝不入库）
+wanghanyu/data/krdict_key.txt
+wanghanyu/data/progress.json
+wanghanyu/data/krdict_failed.txt
+*.bak
+
+# 不入库的本地素材（体积大或运行时不需要）
+wanghanyu/assets/fonts/msyh.ttc
+wanghanyu/assets/fonts/simsun.ttc
+wanghanyu/data/lexicon/
+wanghanyu/data/试听/
+wanghanyu/data/tts/_failed.txt
+wanghanyu/_edge_0.mp3
+wanghanyu/fonttest*.png
+wanghanyu/debug.log
+wanghanyu/_run_*.txt
+wanghanyu/_t1_*.txt
+
+# 注意：wanghanyu/data/tts/*.mp3 是要入库的（预生成的离线音频，约 54MB）
+# ko_align/ 是韩汉对齐语料，入库供 tools/ 脚本复现

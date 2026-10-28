@@ -1,0 +1,62 @@
+#:import CN_FONT utils.fonts.CN_FONT
+
+ScreenManager:
+    id: screen_manager
+
+    Screen:
+        name: 'main'
+        canvas.before:
+            Color:
+                rgba: 1, 1, 1, 1
+            Rectangle:
+                pos: self.pos
+                size: self.size
+        BoxLayout:
+            orientation: 'vertical'
+            spacing: '30dp'
+            padding: '40dp'
+
+            Widget:
+                size_hint_y: 0.2
+
+            Label:
+                text: '汪韩语'
+                font_name: CN_FONT
+                font_size: '56sp'
+                color: 0.08, 0.08, 0.12, 1
+                halign: 'center'
+
+            Label:
+                text: '韩语学习，从汪开始！'
+                font_name: CN_FONT
+                font_size: '22sp'
+                color: 0.5, 0.5, 0.5, 1
+                halign: 'center'
+
+            Widget:
+                size_hint_y: 0.1
+
+            Button:
+                text: '开始学习'
+                font_name: CN_FONT
+                font_size: '20sp'
+                color: 1, 1, 1, 1
+                background_normal: ''
+                background_color: 1, 0.55, 0, 1
+                size_hint: 0.6, None
+                height: '60dp'
+                pos_hint: {'center_x': 0.5}
+                on_release: app.on_learn()
+
+            Widget:
+                size_hint_y: 0.2
+
+            Label:
+                text: '例句来源：Tatoeba (CC BY 2.0 FR)'
+                font_name: CN_FONT
+                font_size: '12sp'
+                color: 0.65, 0.65, 0.68, 1
+                halign: 'center'
+                text_size: self.width, None
+                size_hint_y: None
+                height: self.texture_size[1]

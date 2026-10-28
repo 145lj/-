@@ -1,0 +1,21 @@
+kivy dir: C:\Users\李冠勋\AppData\Local\Programs\Python\Python312\Lib\site-packages\kivy
+label.py exists: False
+pango module import: FAIL -> ModuleNotFoundError No module named 'kivy.core.text._text_pango'
+
+words: 1671 keys: ['id', 'word', 'romanization', 'meaning', 'example', 'example_translation', 'level']
+sample[0]: {"id": 1, "word": "가게", "romanization": "", "meaning": "店铺，小店", "example": "가게을/를 좋아합니다", "example_translation": "喜欢店铺，小店。", "level": "初级"}
+
+--- per-field language composition (over all 1671 words) ---
+  word                 nonempty=1671  cjk=0     hangul=1671  jamo=0    MIXED_CJK+HANGUL=0
+  romanization         nonempty=0     cjk=0     hangul=0     jamo=0    MIXED_CJK+HANGUL=0
+  meaning              nonempty=1671  cjk=1669  hangul=2     jamo=0    MIXED_CJK+HANGUL=2
+  example              nonempty=1671  cjk=0     hangul=1671  jamo=0    MIXED_CJK+HANGUL=0
+  example_translation  nonempty=1671  cjk=1671  hangul=2     jamo=0    MIXED_CJK+HANGUL=2
+
+--- fields whose value contains BOTH CJK and Hangul (sample 5) ---
+  100 / meaning : '在（"있다"的敬语）'
+  1049 / meaning : '十；热（"열나다"）'
+
+--- full charset needed ---
+total distinct chars: 1871 | CJK: 1202 | Hangul/Jamo: 651
+CJK sample: 一七万丈三上下不专世业东丝丢两严个中串为主丽久么义之乎乐乒乓乘九习乡书买乳了事二云互五亚交产享京亮亲人什仁仅今介从仔他仗付以们件价任企休优会伞传伤伯伸似但位低住体何作你使侄例侍便俄俗信修倒候借值假做停健偶像儿元兄先光克免兜入全八公六共关兴其

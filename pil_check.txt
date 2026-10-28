@@ -1,0 +1,4 @@
+malgun  한글가=ok  한글게=ok  한글한=ok  简体汉=TOFU  简体习=TOFU  简体学=TOFU  繁體漢=ok  emoji🔊=TOFU  音符♪=ok  播放▶=ok  圆点●=ok  箭頭→=ok
+msyh    한글가=TOFU  한글게=TOFU  한글한=TOFU  简体汉=ok  简体习=ok  简体学=ok  繁體漢=ok  emoji🔊=TOFU  音符♪=TOFU  播放▶=TOFU  圆点●=ok  箭頭→=ok
+simhei  한글가=TOFU  한글게=TOFU  한글한=TOFU  简体汉=ok  简体习=ok  简体学=ok  繁體漢=ok  emoji🔊=TOFU  音符♪=TOFU  播放▶=TOFU  圆点●=ok  箭頭→=ok
+simsun  한글가=TOFU  한글게=TOFU  한글한=TOFU  简体汉=ok  简体习=ok  简体学=ok  繁體漢=ok  emoji🔊=TOFU  音符♪=TOFU  播放▶=TOFU  圆点●=ok  箭頭→=ok

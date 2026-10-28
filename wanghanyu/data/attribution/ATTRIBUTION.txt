@@ -1,0 +1,2 @@
+例句语料来自 Tatoeba 项目 (https://tatoeba.org)，授权协议为 CC BY 2.0 FR (https://creativecommons.org/licenses/by/2.0/fr/deed)。
+每条句子保留其原始编号，可在 https://tatoeba.org/sentences/show/<id> 查到贡献者。

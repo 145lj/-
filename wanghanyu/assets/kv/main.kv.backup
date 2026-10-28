@@ -1,0 +1,45 @@
+ScreenManager:
+    id: screen_manager
+
+    Screen:
+        name: 'main'
+        MDBoxLayout:
+            orientation: 'vertical'
+            spacing: '20dp'
+            padding: '30dp'
+            MDLabel:
+                text: '汪韩语'
+                font_size: 48
+                theme_text_color: 'Primary'
+                halign: 'center'
+            MDLabel:
+                text: '韩语学习，从汪开始！'
+                font_size: 20
+                theme_text_color: 'Secondary'
+                halign: 'center'
+            MDButton:
+                text: '开始学习'
+                size_hint: 0.6, 0.12
+                pos_hint: {'center_x': 0.5}
+                on_release: app.on_learn()
+
+    Screen:
+        name: 'study'
+        MDBoxLayout:
+            orientation: 'vertical'
+            spacing: '15dp'
+            padding: '20dp'
+            MDLabel:
+                text: '学习界面（开发中...）'
+                font_size: 24
+                halign: 'center'
+            MDLabel:
+                text: '点返回回到主页'
+                font_size: 14
+                theme_text_color: 'Secondary'
+                halign: 'center'
+            MDButton:
+                text: '返回主页'
+                size_hint: 0.5, 0.1
+                pos_hint: {'center_x': 0.5}
+                on_release: app.go_home()
