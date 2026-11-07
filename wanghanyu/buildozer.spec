@@ -17,7 +17,9 @@ source.exclude_exts = bak
 source.exclude_dirs = tests, bin, __pycache__, data/lexicon, data/试听, tools
 source.exclude_patterns = data/krdict_key.txt,data/progress.json,data/words.json.bak,data/words.json.pre-krdict.bak,data/attribution/used_sentences.tsv.html,data/tts/_failed.txt,_edge_0.mp3,fonttest*.png,assets/kv/main.kv.backup,assets/fonts/msyh.ttc,assets/fonts/simsun.ttc
 
-requirements = python3,kivy==2.3.1
+# charset-normalizer 3.4+ 在 PyPI 发布了 android 二进制 wheel，
+# p4a 会下载它但宿主 pip 拒绝安装（p4a issue #2755），钉到纯 Python 版本绕开
+requirements = python3,kivy==2.3.1,charset-normalizer==3.3.2
 
 orientation = portrait
 fullscreen = 0
