@@ -34,13 +34,17 @@ jobs:
             libncurses5-dev libncursesw5-dev libtinfo5 \
             cmake libffi-dev libssl-dev
 
-      # NDK 链接阶段内存峰值高，加 4G swap 防止被 OOM 杀掉
+      # NDK 链接阶段内存峰值高；runner 自带 4G swap 时直接跳过，没有再补
       - name: 追加 swap
         run: |
-          sudo fallocate -l 4G /swapfile
-          sudo chmod 600 /swapfile
-          sudo mkswap /swapfile
-          sudo swapon /swapfile
+          if swapon --show=NAME --noheadings | grep -q swapfile; then
+            echo "已有 swap，跳过"
+          else
+            sudo fallocate -l 4G /swapfile
+            sudo chmod 600 /swapfile
+            sudo mkswap /swapfile
+            sudo swapon /swapfile
+          fi
 
       - uses: actions/setup-python@v5
         with:
@@ -54,7 +58,7 @@ jobs:
           restore-keys: buildozer-
 
       - name: 安装 buildozer
-        run: pip3 install --user buildozer
+        run: python -m pip install buildozer
 
       - name: 构建 debug APK
         working-directory: wanghanyu
